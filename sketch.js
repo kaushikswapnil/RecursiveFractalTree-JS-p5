@@ -6,13 +6,13 @@ var g_WindowHeight = 600;
 var g_BackgroundColor = 51; //Greyscale
 
 //Globals to define branch behaviour
-var g_InitialBranchWidth = 7;
-var g_InitialBranchLength = 150;
-var g_InitialBranchColor;
+var g_InitialBranchWidth = 7.0;
+var g_InitialBranchLength = 150.0;
+var g_InitialBranchColor = 0x222222;
 
 var g_MinimumBranchLength = 2;
-var g_BranchLengthMultiplier = 0.67;
 
+var g_BranchLengthMultiplier = 0.67;
 var g_BranchWidthMultiplier = 0.8;
 
 var g_BranchRotationAngle = 0;
@@ -43,10 +43,10 @@ function setup()
 	g_ColorIncrementFactorSlider = createSlider(0x000000, 0x7FFFFF, 0x000011, 0);
 	g_ColorIncrementFactorSlider.position((g_WindowLength / 2) - 30, 60);	
 
-	g_BranchWidthMultiplierSlider = createSlider(0.0, 1.0, 0.67, 0);
+	g_BranchWidthMultiplierSlider = createSlider(0.0, 1.0, 0.8, 0);
 	g_BranchWidthMultiplierSlider.position((g_WindowLength / 2) - 30, 90);	
 
-	g_BranchLengthMultiplierSlider = createSlider(0.0, 1.0, 0.8, 0);
+	g_BranchLengthMultiplierSlider = createSlider(0.0, 1.0, 0.6, 0);
 	g_BranchLengthMultiplierSlider.position((g_WindowLength / 2) - 30, 120);	
 }
 
@@ -56,8 +56,8 @@ function draw()
 	g_BranchRotationAngle = g_BranchRotationAngleSlider.value();
 	g_InitialBranchColor = g_InitialBranchHexColorSlider.value();
 	g_ColorIncrementFactor = g_ColorIncrementFactorSlider.value();
-	//g_BranchWidthMultiplier = g_BranchWidthMultiplierSlider.value();
-	//g_BranchLengthMultiplier = g_BranchLengthMultiplierSlider.value();
+	g_BranchWidthMultiplier = g_BranchWidthMultiplierSlider.value();
+	g_BranchLengthMultiplier = g_BranchLengthMultiplierSlider.value();
 
 	background(g_BackgroundColor);
 	drawFractalTree();

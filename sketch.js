@@ -136,6 +136,6 @@ function ConvertHexValueToHexColorString(hexValue)
 {
 	const colorRed = hexValue >> 16, colorGreen = hexValue >> 8 & 0xff, colorBlue = hexValue & 0xff;
 
-	const testString = '#' + hexValue.toString(16);
-	return '#' + colorRed.toString(16) + colorGreen.toString(16) + colorBlue.toString(16);
+	const hexColorString = '#' + colorRed.toString(16) + colorGreen.toString(16) + colorBlue.toString(16);
+	return hexColorString;
 }

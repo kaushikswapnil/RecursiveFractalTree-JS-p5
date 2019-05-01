@@ -1,17 +1,16 @@
 /////////////////////////////
 //Globals to define general behaviour
 var g_WindowLength = 800;
-var g_WindowHeight = 600;
+var g_WindowHeight = 700;
 
 var g_BackgroundColor = 51; //Greyscale
 
 //Globals to define branch behaviour
 var g_InitialBranchWidth = 7.0;
-var g_InitialBranchLength = 150.0;
+var g_InitialBranchLength = 200.0;
 var g_InitialBranchColor = 0x222222;
 
-var g_MinimumBranchLength = 2;
-
+var g_MinimumBranchLength = 1.0;
 var g_BranchLengthMultiplier = 0.67;
 var g_BranchWidthMultiplier = 0.8;
 
@@ -60,11 +59,11 @@ function draw()
 	g_BranchLengthMultiplier = g_BranchLengthMultiplierSlider.value();
 
 	background(g_BackgroundColor);
-	drawFractalTree();
-	drawControlPanel();
+	DrawFractalTree();
+	DrawControlPanel();
 }
 
-function drawControlPanel()
+function DrawControlPanel()
 {
 	push();
 	fill(0);
@@ -76,15 +75,15 @@ function drawControlPanel()
 	pop();
 }
 
-function drawFractalTree()
+function DrawFractalTree()
 {
 	push();
 	translate(width / 2, height);
-	branch(g_InitialBranchLength, g_InitialBranchWidth, g_InitialBranchColor);
+	Branch(g_InitialBranchLength, g_InitialBranchWidth, g_InitialBranchColor);
 	pop();
 }
 
-function branch(branchLength, branchWidth, branchColor)
+function Branch(branchLength, branchWidth, branchColor)
 {
 	push();
 
@@ -101,10 +100,10 @@ function branch(branchLength, branchWidth, branchColor)
 		var newBranchLength = branchLength * g_BranchLengthMultiplier;
 
 		rotate(g_BranchRotationAngle);
-		branch(newBranchLength, newBranchWidth, newBranchColor);
+		Branch(newBranchLength, newBranchWidth, newBranchColor);
 
 		rotate(-g_BranchRotationAngle*2);
-		branch(newBranchLength, newBranchWidth, newBranchColor);
+		Branch(newBranchLength, newBranchWidth, newBranchColor);
 	}
 
 	pop();

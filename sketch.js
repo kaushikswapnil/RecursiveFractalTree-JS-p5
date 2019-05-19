@@ -42,10 +42,10 @@ function setup()
 	g_ColorIncrementFactorSlider = createSlider(0x000000, 0x7FFFFF, 0x000011, 0);
 	g_ColorIncrementFactorSlider.position((g_WindowLength / 2) - 30, 60);	
 
-	g_BranchWidthMultiplierSlider = createSlider(0.0, 1.0, 0.8, 0);
+	g_BranchWidthMultiplierSlider = createSlider(0.0, 1.0, 0.8, 0.01);
 	g_BranchWidthMultiplierSlider.position((g_WindowLength / 2) - 30, 90);	
 
-	g_BranchLengthMultiplierSlider = createSlider(0.0, 1.0, 0.6, 0);
+	g_BranchLengthMultiplierSlider = createSlider(0.0, 0.8, 0.6, 0.01);
 	g_BranchLengthMultiplierSlider.position((g_WindowLength / 2) - 30, 120);	
 }
 
